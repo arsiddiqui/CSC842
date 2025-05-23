@@ -18,7 +18,7 @@ Developed for **CSC842 - Security tool Development**, this tool analyzes DNS tra
 
 ---
 
-## Requirements
+## ⚙️ Requirements
 
 - Python 3.8+
 - [Scapy](https://scapy.readthedocs.io/)
