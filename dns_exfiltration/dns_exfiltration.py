@@ -1,3 +1,9 @@
+#Developer:Ashar Siddiqui
+#Artifact: Security Tool Development  CSC842 Summer 2025
+#Lab1
+#Create Date: 05/16/2025
+#Last Update:  05/22/2025
+
 import argparse
 import math
 import json
