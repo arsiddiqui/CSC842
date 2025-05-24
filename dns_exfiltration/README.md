@@ -34,7 +34,7 @@ You can download sample PCAP files for testing from the following source:
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-https://www.youtube.com/watch?v=V6J6_2B84xI
+- [DNS Exfiltration Detection - Youtube](https://www.youtube.com/watch?v=V6J6_2B84xI)
 
 Install dependencies:
 
