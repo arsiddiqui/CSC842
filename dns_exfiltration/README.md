@@ -23,14 +23,25 @@ Developed for **CSC842 - Security tool Development**, this tool analyzes DNS tra
 - Python 3.8+
 - [Scapy](https://scapy.readthedocs.io/)
 - Root privileges (for live capture)
-- 
-## PCAP File
+---
+
+## 📁 Sample PCAP Files
+You can download sample PCAP files for testing from the following source:
+
  - [malware-traffic-analysis](https://www.malware-traffic-analysis.net/training-exercises.html)
+
+---
+## 🎥 Tool Demo
+Watch the demonstration video on YouTube:
+
+https://www.youtube.com/watch?v=V6J6_2B84xI
 
 Install dependencies:
 
 ```bash
 pip install scapy
+
+
 
 
 
