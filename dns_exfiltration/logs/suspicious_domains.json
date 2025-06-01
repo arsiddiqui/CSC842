@@ -34,3 +34,11 @@
 {"timestamp": "2025-05-17T23:19:52.470129", "domain": "abcdefghijklmnopqrstuvwxyz.example.com", "entropy": 4.7, "length": 26}
 {"timestamp": "2025-05-17T23:19:52.471503", "domain": "abcdefghijklmnopqrstuvwxyz.example.com", "entropy": 4.7, "length": 26}
 {"timestamp": "2025-05-17T23:19:52.471916", "domain": "abcdefghijklmnopqrstuvwxyz.example.com", "entropy": 4.7, "length": 26}
+{"timestamp": "2025-05-24T17:26:10.708297", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T17:26:10.758340", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T17:26:25.593753", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T17:26:25.658148", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T18:07:45.725244", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T18:07:45.781647", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T18:23:38.276775", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
+{"timestamp": "2025-05-24T18:23:38.338939", "domain": "abcdefghijklmnopqrstuvwxyz123456789.example.com", "entropy": 5.13, "length": 35}
