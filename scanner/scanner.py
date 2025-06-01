@@ -4,13 +4,14 @@
 #CSC 842, Security tool development Cycle 2
 
 import socket
+import argparse
 
 #IP to Scan used local for testing
 
 target_IP = "127.0.0.1" 
 
 # Set of commom ports
-common_ports = [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 3389]
+common_ports = [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 8080]
 
 def scanPort(ip, port):
     try:
@@ -35,10 +36,29 @@ def scanPort(ip, port):
         pass
 
 def main():
-    print(f"\nScanning {target_IP}...    \n")
-    #for each port in the list scan IP
-    for port in common_ports:
-        scanPort(target_IP, port)
+    
+    
+   
+    #Get arguments from CLI.
+    parser = argparse.ArgumentParser(description="Port scanner &  Banner grabber")
+    parser.add_argument("--ip", required=True, help="Target ip address")
+    parser.add_argument("--ports", help="List of ports (e.g 22,23,8080,....)")
+    parser.add_argument("--timeout", type=float, default=1.0, help="Timeout for socket connection in seconds, defualt is 1.0 Second")
+    parser.add_argument("--output", default="output/Scan_results.json", help="Output file name, default: output/Scan_result.json")
+    args = parser.parse_args()
+     
+    if args.ports:
+        ports = [int(port.strip()) for port in args.ports.split(",")]
+    else:
+        ports = common_ports
+
+#for each port in the list scan IP
+    print(f"Scaning ip.... {args.ip}") 
+    if not args.ports:
+       print(f"No port provided, defualt ports will be scanned {common_ports}")
+    for port in ports:
+        print(f"Scaning Port : {port}")
+        scanPort(args.ip, port)
 
 if __name__ == "__main__":
     main()
