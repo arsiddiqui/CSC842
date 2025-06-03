@@ -25,5 +25,5 @@ Developed for **CSC842 - Security tool Development**, this tool scan for open po
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-- [DNS Exfiltration Detection - Youtube](https://www.youtube.com/watch?v=V6J6_2B84xI)
+- [Port Scanner - Youtube](https://www.youtube.com/watch?v=V6J6_2B84xI)
 
