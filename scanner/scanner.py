@@ -1,9 +1,10 @@
 #Developer: Ashar Siddiqui
 #Date Created: 05/28/2025
-#Date Updated: 05/31/2025
+#Date Updated: 06/03/2025
 #Change Log
 # 05/31/2025: Added Service Description
 # 06/01/2025: Subnet Scanning
+# 06/03/2025:  Add Save 
 #CSC 842, Security tool development Cycle 2
 
 import socket
@@ -11,6 +12,9 @@ import argparse
 import ipaddress
 from functools import partial 
 from concurrent.futures import ThreadPoolExecutor
+import os
+import json
+
 #IP to Scan used local for testing
 
 target_IP = "127.0.0.1" 
@@ -78,6 +82,13 @@ def scanSubnet(subnet, ports, timeout, workers=50):
              results.extend(hostResult)
    return results
 
+def saveAsJson(savePath, results):
+
+    os.makedirs(os.path.dirname(savePath), exist_ok=True)
+    with open(savePath, "w") as f:
+        json.dump(results, f, indent=4)
+    print(f"Results saved to {savePath}")
+
 def main():
     
     
@@ -112,6 +123,7 @@ def main():
     else:
        print(f"      |___Scaning ports....{ports}")
        results = scanPort(args.ip, ports, timeout)
-
+    
+    saveAsJson(args.output, results)  
 if __name__ == "__main__":
     main()
