@@ -18,4 +18,13 @@ This repository contains security tools developed as part of the **CSC842: Secur
 
 ---
 
+### 🌀 **Cycle 2 – Due: June 08, 2025**
+
+**👨‍💻 Student**: Ashar Siddiqui  
+**🔧 Tool**: [Port Scanner Tool](https://github.com/arsiddiqui/CSC842/tree/main/scanner)  
+**📄 Script**: `scanner.py`  
+**🔎 Description**: A command-line Python tool that can scan ports of an IP or subnet and can Identify open ports. if banner is detected can scan for service name.
+
+---
+
 > For tool-specific documentation, demos, and usage instructions, refer to the `README.md` within each tool's subdirectory.
