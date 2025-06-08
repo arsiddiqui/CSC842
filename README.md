@@ -18,7 +18,7 @@ This repository contains security tools developed as part of the **CSC842: Secur
 
 ---
 
-### 🌀 **Cycle 2 – Due: June 08, 2025**
+### 🌀 **Cycle 3 – Due: June 08, 2025**
 
 **👨‍💻 Student**: Ashar Siddiqui  
 **🔧 Tool**: [Port Scanner Tool](https://github.com/arsiddiqui/CSC842/tree/main/scanner)  

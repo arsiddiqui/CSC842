@@ -1,19 +1,17 @@
-# 🛡️ DNS Exfiltration Detection Tool
+# 🛡️ Port Scanner Tool
 
-A command-line tool to detect potential DNS tunneling and data exfiltration attempts using entropy-based heuristics.
+A command-line tool that can scan open ports and detect services on a single IP or a subnet..
 
-Developed for **CSC842 - Security tool Development**, this tool analyzes DNS traffic either from a '.pcap' file or via live sniffing and identifies suspicious DNS queries.
+Developed for **CSC842 - Security tool Development**, this tool scan for open ports of an IP or subnet and read banner for a service.
 
 ---
 
 ## 🔍 Features
 
-- Analyze DNS queries from a PCAP file
-- Live DNS traffic sniffing (UDP port 53)
-- Heuristics-based detection:
-  - High entropy subdomains
-  - Excessively long subdomain names
-- Logs suspicious queries to a JSON file
+- Scan defualt set of ports or a custom ports for an IP or subnet.
+- Defualt common ports [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 8080]
+- Scan opent port banner for the service. 
+- Can Save output as JSON
 - CLI interface – no dependencies on web frameworks
 
 ---
@@ -21,27 +19,11 @@ Developed for **CSC842 - Security tool Development**, this tool analyzes DNS tra
 ## ⚙️ Requirements
 
 - Python 3.8+
-- [Scapy](https://scapy.readthedocs.io/)
-- Root privileges (for live capture)
----
-
-## 📁 Sample PCAP Files
-You can download sample PCAP files for testing from the following source:
-
- - [malware-traffic-analysis](https://www.malware-traffic-analysis.net/training-exercises.html)
+- No additional tools needed.
 
 ---
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-- [DNS Exfiltration Detection - Youtube](https://www.youtube.com/watch?v=V6J6_2B84xI)
-
-Install dependencies:
-
-```bash
-pip install scapy
-
-
-
-
+- [Port Scanner - Youtube](https://www.youtube.com/watch?v=V6J6_2B84xI)
 
