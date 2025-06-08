@@ -1,11 +1,12 @@
 #Developer: Ashar Siddiqui
 #Date Created: 05/28/2025
-#Date Updated: 06/03/2025
+#Date Updated: 06/07/2025
 #Change Log
 # 05/31/2025: Added Service Description
 # 06/01/2025: Subnet Scanning
-# 06/03/2025:  Add Save 
-#CSC 842, Security tool development Cycle 2
+# 06/03/2025:  Add Save
+# 06/07/2025: Fixed the error when no argument is provided. 
+#CSC 842, Security tool development Cycle 3
 
 import socket
 import argparse
@@ -102,28 +103,32 @@ def main():
     parser.add_argument("--output", default="output/Scan_results.json", help="Output file name, default: output/Scan_result.json")
     args = parser.parse_args()
      
-    if args.ports:
-        ports = [int(port.strip()) for port in args.ports.split(",")]
-    else:
-        ports = common_ports
+    if args.ip or args.subnet:
+     
+      if args.ports:
+          ports = [int(port.strip()) for port in args.ports.split(",")]
+      else:
+          ports = common_ports
     
-    timeout = args.timeout
-    #for each port in the list scan IP
-    print("Scanning ..........")
-    if not args.ports:
-       print(f"No port provided, defualt ports will be scanned {common_ports}")
+      timeout = args.timeout
+      #for each port in the list scan IP
+      print("Scanning ..........")
+      if not args.ports:
+          print(f"No port provided, defualt ports will be scanned {common_ports}")
 
-    print(f"|___Ip.... {args.ip}") 
-    print(f"   |___Timeout is....{timeout}")
+      print(f"|___Ip.... {args.ip}") 
+      print(f"   |___Timeout is....{timeout}")
 
-    if args.subnet:
-       print(f"      |___Scaning subnet....{args.subnet}")
-       results = scanSubnet(args.subnet, ports, timeout) 
-       #print(f"Subnaet results: {results}")  
-    else:
-       print(f"      |___Scaning ports....{ports}")
-       results = scanPort(args.ip, ports, timeout)
+      if args.subnet:
+        print(f"      |___Scaning subnet....{args.subnet}")
+        results = scanSubnet(args.subnet, ports, timeout) 
+        #print(f"Subnaet results: {results}")  
+      else:
+        print(f"      |___Scaning ports....{ports}")
+        results = scanPort(args.ip, ports, timeout)
     
-    saveAsJson(args.output, results)  
+        saveAsJson(args.output, results)
+    else:
+        print("Either Port or subnet is rquired, scanner --help")
 if __name__ == "__main__":
     main()
