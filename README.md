@@ -31,7 +31,7 @@ This repository contains security tools developed as part of the **CSC842: Secur
 **👨‍💻 Student**: Ashar Siddiqui  
 **🔧 Tool**: [Pishing Analyzer]()  
 **📄 Script**: `pishing_analyzer.py`  
-**🔎 Description**: A command-line Data driven AI based Python tool, to analyize email for pishing .
+**🔎 Description**:  Pishing Email Analyzer. A command-line Data driven, AI Powered Python tool.
 
 ---
 
