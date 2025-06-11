@@ -29,7 +29,7 @@ This repository contains security tools developed as part of the **CSC842: Secur
 ### 🌀 **Cycle 5 – Due: June 22, 2025**
 
 **👨‍💻 Student**: Ashar Siddiqui  
-**🔧 Tool**: [Pishing Analyzer]()  
+**🔧 Tool**: [Pishing Analyzer](https://github.com/arsiddiqui/CSC842/tree/main/pishingAnalyzer)  
 **📄 Script**: `pishing_analyzer.py`  
 **🔎 Description**:  Pishing Email Analyzer. A command-line Data driven, AI Powered Python tool.
 
