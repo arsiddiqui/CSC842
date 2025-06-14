@@ -64,7 +64,7 @@ def getServiceDescription(port, banner):
         elif "remote desktop" in banner:
             return "RDP"
         elif "smtp" in banner:
-            return "SMPT"
+            return "SMTP"
         elif "ssh" in banner:
             return "SSH"
       #if banner is empty or keyword is not found we can assign description to known ports
@@ -99,7 +99,7 @@ def main():
     parser.add_argument("--ip",  help="Target ip address")
     parser.add_argument("--subnet", help="Target subnet in CIDR (e.g 192.168.0.0/24)")
     parser.add_argument("--ports", help="List of ports (e.g 22,23,8080,....)")
-    parser.add_argument("--timeout", type=float, default=1.0, help="Timeout for socket connection in seconds, defualt is 1.0 Second")
+    parser.add_argument("--timeout", type=float, default=1.0, help="Timeout for socket connection in seconds, default is 1.0 Second")
     parser.add_argument("--output", default="output/Scan_results.json", help="Output file name, default: output/Scan_result.json")
     args = parser.parse_args()
      
@@ -114,21 +114,21 @@ def main():
       #for each port in the list scan IP
       print("Scanning ..........")
       if not args.ports:
-          print(f"No port provided, defualt ports will be scanned {common_ports}")
+          print(f"No port provided, default ports will be scanned {common_ports}")
 
       print(f"|___Ip.... {args.ip}") 
       print(f"   |___Timeout is....{timeout}")
 
       if args.subnet:
-        print(f"      |___Scaning subnet....{args.subnet}")
+        print(f"      |___Scanning subnet....{args.subnet}")
         results = scanSubnet(args.subnet, ports, timeout) 
-        #print(f"Subnaet results: {results}")  
+        #print(f"Subnet results: {results}")  
       else:
-        print(f"      |___Scaning ports....{ports}")
+        print(f"      |___Scanning ports....{ports}")
         results = scanPort(args.ip, ports, timeout)
     
         saveAsJson(args.output, results)
     else:
-        print("Either Port or subnet is rquired, scanner --help")
+        print("Either Port or subnet is required, scanner --help")
 if __name__ == "__main__":
     main()
