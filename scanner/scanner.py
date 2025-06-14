@@ -15,6 +15,7 @@ from functools import partial
 from concurrent.futures import ThreadPoolExecutor
 import os
 import json
+import sys
 
 #IP to Scan used local for testing
 
@@ -96,39 +97,48 @@ def main():
    
     #Get arguments from CLI.
     parser = argparse.ArgumentParser(description="Port scanner &  Banner grabber")
-    parser.add_argument("--ip",  help="Target ip address")
-    parser.add_argument("--subnet", help="Target subnet in CIDR (e.g 192.168.0.0/24)")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--ip",  help="Target ip address")
+    group.add_argument("--subnet", help="Target subnet in CIDR (e.g 192.168.0.0/24)")
     parser.add_argument("--ports", help="List of ports (e.g 22,23,8080,....)")
     parser.add_argument("--timeout", type=float, default=1.0, help="Timeout for socket connection in seconds, default is 1.0 Second")
     parser.add_argument("--output", default="output/Scan_results.json", help="Output file name, default: output/Scan_result.json")
     args = parser.parse_args()
      
-    if args.ip or args.subnet:
+    if args.subnet:
+       try:
+         net = ipaddress.ip_network(args.subnet, strict=False)
+         maxHosts = 2048
+         if net.num_addresses > maxHosts:
+            print(f"Subnet is too large ({net.num_addresses} hosts). Max allowed is {maxHosts}.")
+            sys.exit(1)
+       except ValueError as e:
+         print(f"[ERROR] Invalid subnet: {e}")
+         sys.exit(1)
+
      
-      if args.ports:
-          ports = [int(port.strip()) for port in args.ports.split(",")]
-      else:
-          ports = common_ports
-    
-      timeout = args.timeout
-      #for each port in the list scan IP
-      print("Scanning ..........")
-      if not args.ports:
-          print(f"No port provided, default ports will be scanned {common_ports}")
-
-      print(f"|___Ip.... {args.ip}") 
-      print(f"   |___Timeout is....{timeout}")
-
-      if args.subnet:
-        print(f"      |___Scanning subnet....{args.subnet}")
-        results = scanSubnet(args.subnet, ports, timeout) 
-        #print(f"Subnet results: {results}")  
-      else:
-        print(f"      |___Scanning ports....{ports}")
-        results = scanPort(args.ip, ports, timeout)
-    
-        saveAsJson(args.output, results)
+    if args.ports:
+        ports = [int(port.strip()) for port in args.ports.split(",")]
     else:
-        print("Either Port or subnet is required, scanner --help")
+        ports = common_ports
+    
+    timeout = args.timeout
+    #for each port in the list scan IP
+    print("Scanning ..........")
+    if not args.ports:
+       print(f"No port provided, default ports will be scanned {common_ports}")
+
+    print(f"|___Ip.... {args.ip}") 
+    print(f"   |___Timeout is....{timeout}")
+
+    if args.subnet:
+      print(f"      |___Scanning subnet....{args.subnet}")
+      results = scanSubnet(args.subnet, ports, timeout) 
+      #print(f"Subnet results: {results}")  
+    else:
+      print(f"      |___Scanning ports....{ports}")
+      results = scanPort(args.ip, ports, timeout)
+    
+      saveAsJson(args.output, results)
 if __name__ == "__main__":
     main()
