@@ -1,0 +1,171 @@
+Received: from DM6PR19MB4376.namprd19.prod.outlook.com (2603:10b6:5:2b5::14)
+ by PH0PR19MB7477.namprd19.prod.outlook.com with HTTPS; Tue, 10 Jun 2025
+ 03:12:29 +0000
+Received: from SJ0PR13CA0174.namprd13.prod.outlook.com (2603:10b6:a03:2c7::29)
+ by DM6PR19MB4376.namprd19.prod.outlook.com (2603:10b6:5:2b5::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8835.17; Tue, 10 Jun
+ 2025 03:12:22 +0000
+Received: from CO1PEPF000044F3.namprd05.prod.outlook.com
+ (2603:10b6:a03:2c7:cafe::2a) by SJ0PR13CA0174.outlook.office365.com
+ (2603:10b6:a03:2c7::29) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8835.17 via Frontend Transport; Tue,
+ 10 Jun 2025 03:12:22 +0000
+Authentication-Results: spf=pass (sender IP is 2607:f8b0:4864:20::533)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 2607:f8b0:4864:20::533 as permitted sender) receiver=protection.outlook.com;
+ client-ip=2607:f8b0:4864:20::533; helo=mail-pg1-x533.google.com; pr=C
+Received: from mail-pg1-x533.google.com (2607:f8b0:4864:20::533) by
+ CO1PEPF000044F3.mail.protection.outlook.com (2603:10b6:329:400:0:1001:0:9)
+ with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id
+ 15.20.8835.15 via Frontend Transport; Tue, 10 Jun 2025 03:12:22 +0000
+Received: by mail-pg1-x533.google.com with SMTP id 41be03b00d2f7-b2f645eba5dso2088120a12.1
+        for <ashar.siddiqui@trojans.dsu.edu>; Mon, 09 Jun 2025 20:12:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749525141; x=1750129941; darn=trojans.dsu.edu;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ZUwmpm/qSosfVaI5p6jnA/0imM+2zakeslweUQunzaM=;
+        b=epJfIzA/FMOsuErhSCbE8P7oeWaHtuKSD187kkOXNKV1s4WM/ab15Jla048rKu7IVs
+         Wpr5t5+YgGgXa4FUaGephSyR45JsDGRvp0MhzFj2mY2sPj9/6Tk5J+61WQkyXqu9XYBz
+         IDEbCuS9RU4fF7FNBzzs0AKZr9ToWcMowCwEkEItWDVWhlk8Ozm1fd/4fPczESi6MMMK
+         TwUcI5yUWGRv0NavcqNdvcBhKdFY56JMUvbLXxAwXbJGm7EayzGPxFtIO6Ic2s32Iltj
+         HUwrvL/wwqLAT3kPlXoCf6WPhG2RqN7lffrO7DM6AnEo0H0Xs4UMli5q/MxaDp0ln8Ej
+         WZ5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749525141; x=1750129941;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ZUwmpm/qSosfVaI5p6jnA/0imM+2zakeslweUQunzaM=;
+        b=ed+ZymVFbV/mVfdcbWYY//RDTNrRlhAD9Ach3IyVSg6tQi5qM65GUQG05rNSlbWgH4
+         N0h6nIcwauH90yfce2pjs93hKe+l8M5WPGilIlkiI1DnhGxiJ7t6Y/3c6xrZKwPPqPtc
+         eLCwDcjIDP8sWRq+fO8JPvwDqp4C9SzBUh7ivZCIxl3cdC8472ii0EzSpq5+hpnq31pl
+         f0OZZz3hXbIWfhyAew7GimXsaGX8IUjdAM7imE560VFwMzcLFkYCLAuCYmQH404javZS
+         lTgc0TBM7dyllhgOPUZ37UyhEVBvL9YVFX12eL9C4L6tmpThfFJ2exaIG287IEPWYINp
+         DUSg==
+X-Gm-Message-State: AOJu0YxrTpVO/p/ISaXzDNwzErqsXDrRScBW5paSV/KHnyc/XOGmRXzW
+	NdwKN2EcSkDsu/NKkc2YKwblxmJj4u7Mzd7CQ5SPWEPfGqHN3SkG+dtMI8a2znGFgddTNWRcQAX
+	dwMWQh7zpXbsG9hzNk53WOiAChzaQl4X19QG9ys4=
+X-Gm-Gg: ASbGncv7SF46Obbugw2hE3PQvuy5vORr4pWG0gtUM8pXT4X3CLtr+TJktG1LxrnqN0P
+	4O6xUWtgvyUmGrPCu/SlBcNM77b2QgovJL8Kowmch7v6On4IZOKrsEzyf/TTdu5cGVQQruQ4Uug
+	NK38fhC9xR1PY/ctqTbK8/MEqgPqjC1KK1wKYaud2XFXU2/+LVCbMIzYXP2TIdaIjTAbBUkqg5s
+	aHCrg==
+X-Google-Smtp-Source: AGHT+IG+cNaH1ioTZQt7MnXyKFMYcwZ1f5I0lOvEoX/mfLEKsr+2PGUvmFLjP6t4vU/pMngECyGO1LKWukXhoE9hUIk=
+X-Received: by 2002:a17:90b:4cc4:b0:311:482a:f956 with SMTP id
+ 98e67ed59e1d1-3139dfcf24dmr2424949a91.5.1749525141255; Mon, 09 Jun 2025
+ 20:12:21 -0700 (PDT)
+From: Ashar Siddiqui <siddiqui.ashar@gmail.com>
+Date: Mon, 9 Jun 2025 22:12:11 -0500
+X-Gm-Features: AX0GCFsROFLkVzmN5fLSKj8tWwkWw2Smd3XIZL-vjwbf_0mD_t3QS6YoYy6L5EI
+Message-ID: <CAPZeLnpSj4Jtm8mfKndZ1NsmxgsgXk1s5aq2-s-4n1s6QAyzUA@mail.gmail.com>
+Subject: Test
+To: "ashar.siddiqui@trojans.dsu.edu" <ashar.siddiqui@trojans.dsu.edu>
+Content-Type: multipart/alternative; boundary="00000000000092131206372f10b9"
+Return-Path: siddiqui.ashar@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 10 Jun 2025 03:12:22.4063
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 41eac492-f51c-4fe8-b0df-08dda7cc9e18
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: cbb5b525-3b95-4d93-9417-4dbb3c89512e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CO1PEPF000044F3:EE_|DM6PR19MB4376:EE_|PH0PR19MB7477:EE_
+X-MS-Exchange-Organization-AuthSource: CO1PEPF000044F3.namprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 41eac492-f51c-4fe8-b0df-08dda7cc9e18
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|30052699003|7093399015|8096899003;
+X-Forefront-Antispam-Report: CIP:2607:f8b0:4864:20::533;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-pg1-x533.google.com;PTR:mail-pg1-x533.google.com;CAT:NONE;SFS:(13230040)(30052699003)(7093399015)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2025 03:12:22.2450
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 41eac492-f51c-4fe8-b0df-08dda7cc9e18
+X-MS-Exchange-CrossTenant-Id: cbb5b525-3b95-4d93-9417-4dbb3c89512e
+X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF000044F3.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR19MB4376
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:07.5823641
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8813.018
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VlRiZzE2cllad1JxWGhoRldvQ1N1ckxkMnl4ejhhRzRMcm9uQ2NkZk9JSHYr?=
+ =?utf-8?B?WWNaT2ZBN3dLZjg0OTBSK2FuSVphTzltMmptWXNkRW02eUFzRWx2RGphdnkx?=
+ =?utf-8?B?bDd5ZkhPUXRKN2l2bm41ZU83T0tvdkIyMWliL0pEMWpoRFhuTStqbjVFQ2pE?=
+ =?utf-8?B?Wm9VVGZVUVdjSXl5c0h1R1A2L0orUEFHeDQxN20xanhUZk9RSU44TzBCSk9B?=
+ =?utf-8?B?ai9paDd4RVhVYnZlOXVUOXNOdi9sdE9FNnVPK1AwSGRSV0ZuY0MzK2VpTVFi?=
+ =?utf-8?B?dzhxMWM4K0Z5dnJvQ1BqL3VyWGcydExEd21SSnZSTzJGV1MxbUJFaUZucTdX?=
+ =?utf-8?B?bEppM3VLUkUxMGpFVWRXVXVzUnpSaUd1NHlQL0dOZTNRdUd1SlFBazlzWExo?=
+ =?utf-8?B?SFZiTHo3M2JQb2w2YTdKRW5WU0NRMmVCK2RPN0pweVNqOW1kUHlZTU01Z2gx?=
+ =?utf-8?B?T2Z1V09BWEgzZjdtRy9rRTNydVBrbFA1L2NqQ1NkM205a2c3QkgraGFVOWV0?=
+ =?utf-8?B?b0I4enFGNTdwNWVac0hENXY0RGRvUTdvVXAvVFd0WTErT3RrQTdkVVI2VEk0?=
+ =?utf-8?B?ck14K3E4Ym82MmlxcFlJVDB5NFI4TzM4ejhJN0UzcFpYMW0zaUhrbnNDZTZx?=
+ =?utf-8?B?V0V5citHY1NidEVjZGt1NFdlSFVWbmN6am1PVHF0VEcrTXQ3Z0FyMFBSZjZ0?=
+ =?utf-8?B?SXg2Q29wMko3WkxJbGFMSGtpOG9qd3QzRTVQcXRiU3ZmbWcxakJ4dU5CYVhZ?=
+ =?utf-8?B?NVJ5SXQrbUQ1Q3BScktuR1dHWkJ2elNjZU1WWVd1dkxzUlBJWGs3RTJVVSsx?=
+ =?utf-8?B?M25SUGU5d3lidEpHQkV4MFBONG94a0xtcXd1b1JBU1V2NWRScWIvQUJSN2gy?=
+ =?utf-8?B?eG9Sb09mOXVqNHNKbVZRWlNxRXE3bXlnREtidWFCK2kzMUZJM20ySGJxcjdp?=
+ =?utf-8?B?cDlicC9oTjV5WXdOalJmQ05UUytmUGFFS2JyT1V0WXBscS82Mm9SOXBkZlgz?=
+ =?utf-8?B?R1BjTml3eUdBWWlOVGJDTjhWR3FYanBicXAzTFJwYnVMMnh2eStiblZLWUVr?=
+ =?utf-8?B?b2ZHZ0ZqZ01PV1E3ZFVtQ21GNFFxbTlOUktSZkdLU01EVjNnM085UlZLUTdF?=
+ =?utf-8?B?VXJKR1lZRDBudUtMT05MUWxGS05wYzVWVG1xQ3FaR05Pa04xd0s0WlE2dys3?=
+ =?utf-8?B?R1JIamhUUkp1aWx3aitNNUhHYS95Ym9yZnhSQXpoR0p6R1gxdHZXRUw5RDlo?=
+ =?utf-8?B?N1dsZTRaT3hhc244VUhQcmd2THRwNElpckgyZlhMdjZhQXBVcDBralYwc0d0?=
+ =?utf-8?B?dld3T05ENE83MkZXSDhVK0V6WlhmZ1ZxSXdwRjlwMVJrODF6WlRGb0ZENzU2?=
+ =?utf-8?B?dlUyYzYydzY5eENjWjVpQXI3ZlRneC9pdDBWSnl6VlRoeWtlUlNSei9DV216?=
+ =?utf-8?B?WW5acEJUNWRCVlhCNVArb3NVSW1PQ2VVTTRhckxreGUwdXh3T3dsSUwzMEpW?=
+ =?utf-8?B?WWpIQ2JrL1RvMTliTGhSOVVBbEpwekhuQ2dWWDVCendkRWNrbmFxMFp3ejJO?=
+ =?utf-8?B?UmswcjVLNFc5b0s3ODZvNjFFWDFvNHlCLzlWNXBGM0NjRkI1OXV1YklhYUxO?=
+ =?utf-8?B?KzNJOWZnY2VjVUR0b0lxVUhONk11Q0VtYlJtN253eXJZdHplVkIveUJ0Zm5x?=
+ =?utf-8?B?bVNMNGI4dFdBcGhlUzhtWTdESllwbVQrS1ArK2YyWk13RFFHaTdwM2c3OS9o?=
+ =?utf-8?B?OVl0QnFZaXN1bEdZak8yNm5BQ3pIUzV5dmFQaXNvZkJaUUhRajc5RW5lSkVC?=
+ =?utf-8?B?OXZlbnZkS3J1bGZJMm1jaC9WWVdvdDBuYWtyNEQyVnU1eTluRXlSeis3cXBZ?=
+ =?utf-8?B?cGU2RWNxa3ExSzVib3BqbTlOR1dYUHRUNk9RQ3VSOUlMMGtrSndVeWRtRGZn?=
+ =?utf-8?B?SGpXMitQaUlhQWw4S0JndzlISTNIYzJUbU5aa0toNWFxVytTbmk5VG0wWS82?=
+ =?utf-8?B?WXM5aUpmTnY1Q2k0N09kdGlhbjNLbFJyWlNEVDRzS1hXUDNDTTVIQU5uT3pI?=
+ =?utf-8?B?U21aREV4dnNRKytjM201SnZLZ0V5SlErSzBlZUNNRHc1azlmSDJDN3hOSStn?=
+ =?utf-8?B?RlJMaG5yMXVSeEViNlFoYTVBMUY4TCtETERaZnJIeHhuelk5c0t2cmIzbTU3?=
+ =?utf-8?B?UDJ0TTMvRDZXZCtTUnNPZm5yZW5LNlZiK29XMWFRR1FyRHhISXdJRHBtbHpS?=
+ =?utf-8?B?WEt6VkxmZGxYRDM1bjMwcFdCRFpPZVhpNEhYMmRCb2t2R2pzQnN6eUtrdlhk?=
+ =?utf-8?B?Nk5Vc3ZHd09zbjdNaDlSc1RmRUVsYUdmSDZYTDVEWmNmUG85MzN2bG1ud0VR?=
+ =?utf-8?B?NWZsVExBVm1sNlpDWUZUUHNPdGgxQXJCZnZkM3JWeER1a1E3SFRNUzFScG1F?=
+ =?utf-8?B?WEVHYVNiSHF2NzFsQzdIbW1TeUNEdUVMS1NQTFV0M2dUcnprM3VtQUZrWXFq?=
+ =?utf-8?B?ZU5xUFJCYWlBLzFrQ3paYzFlZkxRQW51bTR0dmZKSlRrbjRXNCtRQ2VmYXlW?=
+ =?utf-8?B?eXFOaTcrTzRRbGc2UEdleUN1TVYyclpZWjlhN1RnZDVaWTNQZ0U2SmdCdHpQ?=
+ =?utf-8?B?ZTNJWFRCWUZoR3VPby9pRjRNMzR0Y25JaUdXRjlJM05xSHUxb21IMFYrTmxH?=
+ =?utf-8?B?Y3Q5WVBocE05dWU3L3pjeEd0N2Q0bDdiaTJVZkRxSk96cjA0TFRvNFpBUmZB?=
+ =?utf-8?B?L3U3dGFIMjRzSW5jdjN3ZjJYOUs1cFFnRU9HNjMzYjVVdkExSzdOOEZyd1B6?=
+ =?utf-8?B?N0YxQWlIYk9FNHJOcU01L3hRa0dLakY3ZVFMNDB3SlllRERsc2ZIWmFralRn?=
+ =?utf-8?B?YlNBU2I1S3VFVFdkakhHUmwvMHNjd25JK2doRGNHYVVYbDN2cy95UXpYd2FP?=
+ =?utf-8?B?T1NsTXRLTTBwNVhJMk5oU25VanhBQWpqcllMaHJSSHRYem1zRTVETTU3MjQ4?=
+ =?utf-8?B?eHFXcUdXTFAxcDJxUndCMHJsUmJpWWxJQlZYRXVzR1IzclpqNkE5ckRUYk5K?=
+ =?utf-8?Q?y9/tVKvDqhBNvYc0fmmfQLCwamefTPf0c=3D?=
+MIME-Version: 1.0
+
+--00000000000092131206372f10b9
+Content-Type: text/plain; charset="UTF-8"
+
+Your account has been suspended. Click here to verify
+
+-- 
+
+*Thank youAshar Siddiqui*
+
+--00000000000092131206372f10b9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div>Your account has been suspended. Click here to verify</=
+div><div><br></div><span class=3D"gmail_signature_prefix">-- </span><br><di=
+v dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature">=
+<i><b>Thank you<br>Ashar Siddiqui</b></i></div></div>
+
+--00000000000092131206372f10b9--

@@ -23,7 +23,7 @@ pishingSentence = [
 ]
 
 
-# 1 = pishing mail
+# 1 = phishing mail
 # 0 = mail is safe.
  
 trainLabels = [1,0]
