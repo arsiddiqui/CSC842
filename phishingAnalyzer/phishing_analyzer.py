@@ -17,7 +17,7 @@ from sklearn.linear_model import LogisticRegression
 import joblib
 
 
-pishingSentence = [
+phishingSentence = [
 "Your account has been suspended. Click here to verify.",
 "Monthly report attached. Let me know your feedback."
 ]
@@ -47,14 +47,14 @@ def parseEmail(emlFile):
 
 def _AIModel():
 
-    #if pishing model is laready created return it else create
+    #if phishing model is already created return it else create
     #load model from the disk and return
-    if not os.path.exists("pishingModel.pkl"):
-       # careate instance of a vector to convert text to numbers.
+    if not os.path.exists("phishingModel.pkl"):
+       # create instance of a vector to convert text to numbers.
        vectorizer = TfidfVectorizer()
 
-       # Pishing Sentences array to numbers using TfidfVectorizer
-       features = vectorizer.fit_transform(pishingSentence)
+       # Phishing Sentences array to numbers using TfidfVectorizer
+       features = vectorizer.fit_transform(phishingSentence)
 
        #Machine learning model
        model = LogisticRegression()
@@ -63,8 +63,8 @@ def _AIModel():
        model.fit(features, trainLabels)
 
        #Save the vectorizer and model 
-       joblib.dump((vectorizer, model), "pishingModel.pkl")
-    modelData = joblib.load("pishingModel.pkl")
+       joblib.dump((vectorizer, model), "phishingModel.pkl")
+    modelData = joblib.load("phishingModel.pkl")
     return  modelData
 
 
@@ -86,7 +86,7 @@ def predictPishing(subject, sender, body, modelData):
     # Get the confidence score of the prediction
     confidence = model.predict_proba(features)[0][prediction]
 
-    # Return predticon and confidenc score
+    # Return prediction and confidence score
     return prediction, confidence
 
 def main():
@@ -102,9 +102,9 @@ def main():
 
     modelData = _AIModel()
 
-    isPishing, confidence = predictPishing(subject, sender, emailBody, modelData)
-    if isPishing:
-        print("This is a pishing email")
+    isPhishing, confidence = predictPishing(subject, sender, emailBody, modelData)
+    if isPhishing:
+        print("This is a phishing email")
     else:
         print("This email is safe")
 
