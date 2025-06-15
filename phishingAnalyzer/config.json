@@ -1,0 +1,7 @@
+{
+  "mongo_uri": "mongodb://192.168.0.155:27017",
+  "mongo_db": "csc842",
+  "mongo_collection": "emails_train",
+  "userId": "xxxxx",
+  "password": "xxxxxxx"
+}
