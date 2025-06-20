@@ -25,6 +25,6 @@ Developed for **CSC842 - Security tool Development**, Phishing Email Analyzer. A
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-- [Email Analyzer - Youtube](https://www.youtube.com/watch?v=NDfhKBQ6J4Q)
+- [Email Analyzer - Youtube](https://www.youtube.com/watch?v=J_yV9z7ElH0)
 
 
