@@ -34,7 +34,7 @@ This repository contains security tools developed as part of the **CSC842: Secur
 **🔎 Description**:  Phishing Email Analyzer. A Command-line Data Driven, AI Powered Python tool.
 
 ---
-### 🌀 **Cycle 7 – Due: July 13, 2025**
+### 🌀 **Cycle 7 – Due: July 06, 2025**
 
 **👨‍💻 Student**: Ashar Siddiqui  
 **🔧 Tool**: [Phishing Analyzer BERT (Bidirectional Encoder Representations from Transformers)](https://github.com/arsiddiqui/CSC842/tree/main/phishingAnalyzerBert)  
