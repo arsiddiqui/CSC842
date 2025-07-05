@@ -27,6 +27,6 @@ Developed for **CSC842 - Security tool Development**, Document Scanner..
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-- [Documents Scanner - Youtube](https://www.youtube.com/watch?v=J_yV9z7ElH0)
+- [Documents Scanner - Youtube](https://www.youtube.com/watch?v=yv1GkbJr8Zo)
 
 
