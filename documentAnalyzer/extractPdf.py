@@ -1,4 +1,4 @@
-#Developer: Ashar Siddiqu#Date Created: 06/09/2025
+#Developer: Ashar Siddiqu#Date Created: 07/01/2025
 #Date Updated: 07/01/2025
 #Pdf and Worddoc Scanner
 #Change Log
