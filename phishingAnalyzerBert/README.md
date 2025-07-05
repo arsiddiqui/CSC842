@@ -49,6 +49,6 @@ Fine-tuning BERT on a phishing specific dataset could significantly improve accu
 ## 🎥 Tool Demo
 Watch the demonstration video on YouTube:
 
-- [Email Analyzer - Youtube](https://www.youtube.com/watch?v=J_yV9z7ElH0)
+- [Email Analyzer - Youtube](https://www.youtube.com/watch?v=c3euk9h9jXk&ab_channel=AsharSiddiqui)
 
 
