@@ -43,4 +43,13 @@ This repository contains security tools developed as part of the **CSC842: Secur
 
 ---
 
+### 🌀 **Cycle 9 – Due: July 20, 2025**
+
+**👨‍💻 Student**: Ashar Siddiqui  
+**🔧 Tool**: [Document Scanner , Lightweight CLI Tool for PDF & Office File Analysis](https://github.com/arsiddiqui/CSC842/tree/main/documentAnalyzer)  
+**📄 Script**:  `analyzer.py`   
+**🔎 Description**:  Document Scanner , Lightweight CLI Tool for PDF & Office File Analysis.
+
+---
+
 > For tool-specific documentation, demos, and usage instructions, refer to the `README.md` within each tool's subdirectory.
